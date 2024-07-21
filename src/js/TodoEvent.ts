@@ -1,4 +1,5 @@
 import TodoDom from "./TodoDom";
+import { getTodoList } from "./TodoService";
 import { ITodoData } from "./typing";
 
 
@@ -8,7 +9,7 @@ class TodoEvent extends TodoDom{
     constructor (todoData : ITodoData[], todoWrapper : HTMLElement){
         super(todoWrapper);
         this.todoData = todoData;
-        this.init();
+        this.init(this.todoData);
     }
 
 public addTodo(todo : ITodoData) : undefined | number{
@@ -23,7 +24,11 @@ public addTodo(todo : ITodoData) : undefined | number{
     return 1001;
 }
 
-private init(){
+
+
+@getTodoList
+private init(todoData : ITodoData[]){
+    this.todoData = todoData;
     this.initList(this.todoData);
 }
 

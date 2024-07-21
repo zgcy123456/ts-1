@@ -9,22 +9,7 @@ import TodoEvent from "./js/TodoEvent"
 
 
     const todoData: ITodoData[] = [
-
-        {
-            id : 1,
-            content : '123',
-            completed:false
-        },
-        {
-            id : 2,
-            content : '234',
-            completed:false
-        },
-        {
-            id : 3,
-            content : '345',
-            completed:false
-        }
+        
     ];
 
     const todoEvent : TodoEvent = new TodoEvent(todoData, oTodoList);
@@ -43,7 +28,7 @@ import TodoEvent from "./js/TodoEvent"
         let ret = 0;
         if(val.length){
              ret = todoEvent.addTodo({
-                id:4,
+                id:new Date().getTime(),
                 content:val,
                 completed:false
             });
