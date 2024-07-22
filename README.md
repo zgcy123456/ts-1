@@ -28,23 +28,10 @@ npm i --save-dev typescript
 npm ts-jest config:init
 
 
-
 npm i --save-dev jest  #ts-jest 依赖 jest
 npm i --save-dev ts-jest
 npm i --save-dev @types/jest
 
-
-1 同步ts-jest  ok
-2 ts-jest sample  
-3 样式调整。
-3 地图多选
-5 未生成的元素，如何添加事件
-
-
-npm config set registry http://registry.npmjs.org/
-npm config set registry https://registry.npmjs.org/
-
-npm config set registry http://registry.npm.taobao.com
 
 
 获取当前的镜像
@@ -53,15 +40,30 @@ npm config get registry
 清除缓存
 npm cache clean --force
 
+
+
+
 下载报错，提示链接不上
 npm config set strict-ssl false
 
-tsc --init
+安装server
+yarn add express @types/express ts-node-dev typescript jquery @types/jquery -D
 
+生成tsconfig文件
+tsc --init
 npx tsc --init
 
-npm run dev
-npm run server
+修改配置文件
+package.json
+tsconfig.json
 
-安装jquery
+
+
+安装jquery，注意删除
 yarn add  jquery @types/jquery
+
+
+客户端启动
+npm run dev
+服务端启动
+npm run server

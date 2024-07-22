@@ -1,5 +1,5 @@
 import TodoDom from "./TodoDom";
-import { getTodoList } from "./TodoService";
+import { getTodoList, removeTodo, toggleTodo, addTodo } from "./TodoService";
 import { ITodoData } from "./typing";
 
 
@@ -12,6 +12,8 @@ class TodoEvent extends TodoDom{
         this.init(this.todoData);
     }
 
+
+@addTodo
 public addTodo(todo : ITodoData) : undefined | number{
     const _todo : undefined | ITodoData = this.todoData.find((item: ITodoData) =>item.content === todo.content);
 
@@ -32,11 +34,15 @@ private init(todoData : ITodoData[]){
     this.initList(this.todoData);
 }
 
+
+@removeTodo
 public removeTodo(target : HTMLElement, id: number) : void {
     this.todoData = this.todoData.filter((todo : ITodoData) => todo.id !== id);
     this.removeItem(target);
 }
 
+
+@toggleTodo
 public toggleComplete(target : HTMLElement, id : number) : void{
     this.todoData = this.todoData.map(
         (todo : ITodoData) => {
