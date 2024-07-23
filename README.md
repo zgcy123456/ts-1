@@ -37,6 +37,12 @@ npm i --save-dev @types/jest
 获取当前的镜像
 npm config get registry
 
+
+配置镜像地址
+npm config set registry https://registry.npm.taobao.org  --global
+yarn config set registry https://registry.npmjs.org --global
+
+
 清除缓存
 npm cache clean --force
 
